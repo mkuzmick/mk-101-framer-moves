@@ -27,7 +27,7 @@ const Shape = ({ children, className }: ShapeProps) => {
 
 export default function Home() {
    const fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Icedberry', 'Jackfruit', 'Kiwi', 'Lemon'];
-   const fruitColors = {
+   const fruitColors: Record<string, string> = {
     apple: 'bg-apple',
     banana: 'bg-banana',
     cherry: 'bg-cherry',
@@ -53,7 +53,7 @@ export default function Home() {
             duration: 3 + Math.random() * 0.5, // Slightly random duration
           }}
         >
-          <Shape className={cn(fruitColors[fruit.toLowerCase()])}>{fruit}</Shape> {/* Set color class securely */}
+          <Shape className={cn(fruitColors[fruit.toLowerCase() as keyof typeof fruitColors])}>{fruit}</Shape> {/* Set color class securely */}
         </motion.div>
       ))}
       {fruits.map((fruit, index) => (

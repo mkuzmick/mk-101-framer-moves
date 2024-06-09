@@ -28,7 +28,7 @@ export default function Page () {
     const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   return (
-    <main>
+    <main >
     <div ref={ref} className="w-full min-h-screen overflow-hidden relative grid place-items-center">
 
       <motion.h1 
